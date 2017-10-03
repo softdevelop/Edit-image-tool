@@ -36,11 +36,12 @@ if($degrees) {
 $udwidth= $rerera*$_POST['crPosW'];
 $udhight= $rerera*$_POST['crPosH'];
 $new_image = imagecreatetruecolor($udwidth, $udhight);
-if ($ext == '.png')
+if ($ext == '.png') {
 	$color = imagecolorallocatealpha($new_image, 0, 0, 0, 127); 	//	Tranperant
-else
+} else
 	$color = imagecolorallocate($new_image, 255, 255, 255);
 imagefill($new_image, 0, 0, $color);
+imagesavealpha($new_image, true);	
 
 $dst_x = 0;		$src_x = 0;
 $dst_y = 0;		$src_y = 0; 
